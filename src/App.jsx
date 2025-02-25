@@ -10,18 +10,25 @@ const App = () => {
     { id: 2, name: "Learning React JS" },
   ]);
 
-  const name = "kun";
-  const age = 21;
-
   const addNewData = (name) => {
-    alert(`Name : ${name}`);
+    const newTodo = {
+      id: randomId(1, 1000000),
+      name: name,
+    };
+
+    setTodoList([todoList, newTodo]);
   };
+
+  const randomId = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
   return (
     <>
       <div className="todo-container">
         <div className="todo-title">Todo List</div>
         <TodoNew addNewData={addNewData} />
-        <TodoData name={name} age={age} todoList={todoList} />
+        <TodoData todoList={todoList} />
         <div className="todo-img">
           <img src={reactLogo} alt="" className="logo" />
         </div>
