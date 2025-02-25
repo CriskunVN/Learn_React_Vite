@@ -16,7 +16,7 @@ const App = () => {
       name: name,
     };
 
-    setTodoList([todoList, newTodo]);
+    setTodoList([...todoList, newTodo]);
   };
 
   const randomId = (min, max) => {
