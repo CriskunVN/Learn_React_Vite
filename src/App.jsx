@@ -15,8 +15,12 @@ const App = () => {
       id: randomId(1, 1000000),
       name: name,
     };
-
     setTodoList([...todoList, newTodo]);
+  };
+
+  const deleteToDo = (id) => {
+    const updatedList = todoList.filter((item) => item.id !== id);
+    setTodoList(updatedList);
   };
 
   const randomId = (min, max) => {
@@ -30,7 +34,7 @@ const App = () => {
         <TodoNew addNewData={addNewData} />
 
         {todoList.length > 0 ? (
-          <TodoData todoList={todoList} />
+          <TodoData todoList={todoList} deleteTodo={deleteToDo} />
         ) : (
           <div className="todo-img">
             <img src={reactLogo} alt="" className="logo" />
