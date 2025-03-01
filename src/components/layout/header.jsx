@@ -10,7 +10,7 @@ const Header = () => {
         <NavLink to="/users">User</NavLink>
       </li>
       <li>
-        <NavLink to="/products">Product</NavLink>
+        <NavLink to="/books">Book</NavLink>
       </li>
     </ul>
   );
